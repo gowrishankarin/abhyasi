@@ -9,7 +9,7 @@ class SittingInline(admin.TabularInline):
 
 class AbhyasiAdmin(admin.ModelAdmin):
 	fieldsets = [
-		(None, 					{'fields':['name']}),
+		(None, 					{'fields':['name', 'date_of_birth', 'date_of_join', 'id_card_number', 'address']}),
 		('Sitting information', {'fields':['date_of_birth'], 'classes':['collapse']})
 	]
 
