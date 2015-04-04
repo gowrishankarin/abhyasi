@@ -10,14 +10,16 @@ class Abhyasi(models.Model):
 	date_of_birth = models.DateField('Date of Birth')
 	date_of_join = models.DateField('Date of Join')
 	address = models.CharField(max_length=200)
+	email = models.EmailField(blank=True, default='abhyasi@abhyasi.com')
+	biography = models.TextField(max_length=100, default="Short Bio")
 	def __str__(self):
 		return self.name
 
 
 class Sitting(models.Model):
 	name = models.ForeignKey(Abhyasi)
-	date_and_time = models.DateTimeField('Date and Time of Individual Sitting')
-	findings = models.CharField(max_length=300)
-	experiences = models.CharField(max_length=300)
+	date = models.DateTimeField('Date and time of individual sitting')
+	findings = models.TextField(max_length=300)
+	experiences = models.TextField(max_length=300)
 	def __str__(self):
 		return self.findings
