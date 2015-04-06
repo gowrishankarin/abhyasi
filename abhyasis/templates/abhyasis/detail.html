@@ -1,0 +1,6 @@
+<h1>{{ abhyasi.name }}</h1>
+<ul>
+{% for sitting in abhyasi.sitting_set.all %}
+    <li>{{ sitting.findings }}</li>
+{% endfor %}
+</ul>
