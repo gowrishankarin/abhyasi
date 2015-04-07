@@ -1,6 +1,10 @@
 <h1>{{ abhyasi.name }}</h1>
 <ul>
 {% for sitting in abhyasi.sitting_set.all %}
-    <li>{{ sitting.findings }}</li>
+	<h4>{{ sitting.date }}</h4>
+	<strong>Findings</strong>
+    <div>{{ sitting.findings }}</div>
+    <strong>Experiences</strong>
+    <div>{{ sitting.experiences }}</div>
 {% endfor %}
 </ul>
