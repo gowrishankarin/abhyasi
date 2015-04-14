@@ -2,6 +2,7 @@ from django.http import Http404
 from django.shortcuts import render
 
 from .models import Abhyasi
+from .forms import AbhyasiForm
 
 # Create your views here.
 def index(request):
@@ -18,3 +19,7 @@ def detail(request, abhyasi_id):
 
 def results(request, abhyasi_id):
 	return detail(request, abhyasi_id)
+
+def abhyasi_new(request, abhyasi_id):
+	form = AbhyasiForm()
+	return render(request, 'abhyasis/abhyasi_edit.html', {'form': form})

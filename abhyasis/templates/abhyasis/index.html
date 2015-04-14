@@ -1,9 +1,15 @@
-{% if latest_abhyasi_list %}
-	<ul>
-		{% for abhyasi in latest_abhyasi_list %}
-			<li><a href="{% url 'abhyasis:detail' abhyasi.id %}">{{ abhyasi.name }}</a></li>
-		{% endfor %}
-	</ul>
-{% else %}
-	<p>No abhyasis are registered.</p>
-{% endif %}
+{% extends 'abhyasis/base.html' %}
+
+{% block content %}
+
+	{% if latest_abhyasi_list %}
+		<ul>
+			{% for abhyasi in latest_abhyasi_list %}
+				<li><a href="{% url 'abhyasis:detail' abhyasi.id %}">{{ abhyasi.name }}</a></li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No abhyasis are registered.</p>
+	{% endif %}
+
+{% endblock content %}

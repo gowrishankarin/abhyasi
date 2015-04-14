@@ -3,8 +3,8 @@
 # @Author: Gowri Shankar
 # @Date:   2015-04-04 21:39:23
 # @Last Modified by:   Gowri Shankar
-# @Last Modified time: 2015-04-04 21:53:29
-from django.conf.urls import url
+# @Last Modified time: 2015-04-14 17:26:25
+from django.conf.urls import include, url
 
 from . import views
 
@@ -14,4 +14,5 @@ urlpatterns = [
     url(r'^(?P<abhyasi_id>[0-9]+)/$', views.detail, name='detail'),
     # ex: /abhyasis/5/results/
     url(r'^(?P<abhyasi_id>[0-9]+)/results/$', views.results, name='results'),
+    url(r'^abhyasis/new', views.abhyasi_new, name='abhyasi_new'),
 ]

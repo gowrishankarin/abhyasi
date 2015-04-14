@@ -1,0 +1,31 @@
+{% load staticfiles %}
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>Abhyasi Info and Individual Sittings History</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'abhyasis/abhyasi.css' %}">
+</head>
+<body>
+	<div class="page-header">
+		<a href="{% url 'abhyasis.views.abhyasi_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+	    <h1><a href="/">Abhyasi Info and Individual Sittings History</a></h1>
+	</div>
+
+	<ul>
+		<div class="content container">
+			<div class="row">
+				<div class="col-md-8">
+				{% block content %}
+				{% endblock %}
+				</div>
+			</div>
+		</div>
+	</ul>
+</body>
+</html>
+
+
+
+

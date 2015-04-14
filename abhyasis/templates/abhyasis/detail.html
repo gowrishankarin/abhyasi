@@ -1,10 +1,16 @@
-<h1>{{ abhyasi.name }}</h1>
-<ul>
-{% for sitting in abhyasi.sitting_set.all %}
-	<h4>{{ sitting.date }}</h4>
-	<strong>Findings</strong>
-    <div>{{ sitting.findings }}</div>
-    <strong>Experiences</strong>
-    <div>{{ sitting.experiences }}</div>
-{% endfor %}
-</ul>
+{% extends 'abhyasis/base.html' %}
+
+{% block content %}
+	<h1><a href="/">{{ abhyasi.name }}</a></h1>
+	{% for sitting in abhyasi.sitting_set.all %}
+		<div class="sitting">
+			<div class="date">{{ sitting.date }}</div>
+			<strong>Findings</strong>
+		    <div>{{ sitting.findings }}</div>
+		    <strong>Experiences</strong>
+		    <div>{{ sitting.experiences }}</div>
+		</div>
+	{% endfor %}
+
+
+{% endblock content %}
