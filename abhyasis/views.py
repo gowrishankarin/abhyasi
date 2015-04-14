@@ -20,6 +20,6 @@ def detail(request, abhyasi_id):
 def results(request, abhyasi_id):
 	return detail(request, abhyasi_id)
 
-def abhyasi_new(request, abhyasi_id):
+def abhyasi_new(request):
 	form = AbhyasiForm()
 	return render(request, 'abhyasis/abhyasi_edit.html', {'form': form})
