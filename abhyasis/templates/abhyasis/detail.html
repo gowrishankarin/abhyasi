@@ -1,14 +1,26 @@
 {% extends 'abhyasis/base.html' %}
 
 {% block content %}
-	<h1><a href="/">{{ abhyasi.name }}</a></h1>
+	<div class="jumbotron">
+		<h3>{{ abhyasi.name }} <small><a href="{% url 'abhyasis:abhyasi_edit' pk=abhyasi.pk %}">edit</a></small></h3>
+		<a href="{% url 'abhyasis:sitting_new' pk=abhyasi.pk %}" class="btn btn-sm btn-success">Add Sitting Info</a>
+	</div>
+	
+	
 	{% for sitting in abhyasi.sitting_set.all %}
-		<div class="sitting">
-			<div class="date">{{ sitting.date }}</div>
-			<strong>Findings</strong>
-		    <div>{{ sitting.findings }}</div>
-		    <strong>Experiences</strong>
-		    <div>{{ sitting.experiences }}</div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-10">
+				<div class="panel panel-default">
+				  	<div class="panel-heading">
+				    	<h3 class="panel-title">{{ sitting.date }}</h3>
+				  	</div>
+				  	<div class="panel-body">
+				   		<strong>Findings: </strong>{{ sitting.findings }}
+				  	</div>
+				  	<div class="panel-footer"><strong>Experiences: </strong>{{ sitting.experiences }}</div>
+				</div>
+			</div>
 		</div>
 	{% endfor %}
 

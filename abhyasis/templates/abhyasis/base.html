@@ -3,19 +3,23 @@
 <html>
 <head>
 	<title>Abhyasi Info and Individual Sittings History</title>
+
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="{% static 'abhyasis/abhyasi.css' %}">
+
 </head>
 <body>
 	<div class="page-header">
 		<a href="{% url 'abhyasis:abhyasi_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-	    <h1><a href="/">Abhyasi Info and Individual Sittings History</a></h1>
+	    <h3><a href="/">Abhyasi Info and Individual Sittings History</a></h3>
 	</div>
 
 	<ul>
 		<div class="content container">
 			<div class="row">
+				<div class="col-md-4">Spirituality is the search for a higher experience of ourselves. Experience is the source from which real knowledge begins. Heartfulness is a path to experiencing your inner self.</div>
 				<div class="col-md-8">
 				{% block content %}
 				{% endblock %}

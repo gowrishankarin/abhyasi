@@ -1,11 +1,12 @@
 {% extends 'abhyasis/base.html' %}
 
 {% block content %}
-	{% if form.name == None %}
-	<h4>Modify Abhyasi Details</h4>
-	{% else %}
-	<h4>Add/Modify Abhyasi Info</h4>
-	{% endif %}
+
+	<h4>Add Sitting Info</h4>
+	<div class="jumbotron">
+		<h3>{{ abhyasi.name }} </h3>
+	</div>
+	
 	<form method="POST" class="abhyasi-form">{% csrf_token %}
 		{{ form.as_p }}
 		<button type="submit" class="save btn btn-default">Save</button>
