@@ -1,7 +1,8 @@
 {% extends 'abhyasis/base.html' %}
 
 {% block content %}
-
+	<p><a href="{% url 'abhyasis:abhyasi_new' %}" class="bt btn-sm btn-success">
+		Add new abhyasi</span></a></p>
 	{% if latest_abhyasi_list %}
 		<ul>
 			{% for abhyasi in latest_abhyasi_list %}
