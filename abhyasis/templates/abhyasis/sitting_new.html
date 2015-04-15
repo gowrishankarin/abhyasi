@@ -8,7 +8,7 @@
 	</div>
 	
 	<form method="POST" class="abhyasi-form">{% csrf_token %}
-		{{ form.as_p }}
+		{{ form.as_ul }}
 		<button type="submit" class="save btn btn-default">Save</button>
 	</form>
 {%endblock content %}
