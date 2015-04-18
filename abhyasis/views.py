@@ -2,7 +2,7 @@ from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.urlresolvers import reverse
 
-from .models import Abhyasi
+from .models import Abhyasi, Sitting
 from .forms import AbhyasiForm, SittingForm
 
 # Create your views here.
@@ -14,9 +14,10 @@ def index(request):
 def detail(request, abhyasi_id):
 	try:
 		abhyasi = Abhyasi.objects.get(pk=abhyasi_id)
+		sittings = Sitting.objects.all().filter(name=abhyasi_id).order_by('-date')
 	except Abhyasi.DoesNotExist:
 		raise Http404("Abhyasi does not exist")
-	return render(request, 'abhyasis/detail.html', {'abhyasi': abhyasi})
+	return render(request, 'abhyasis/detail.html', {'abhyasi': abhyasi, 'sittings':sittings})
 
 def results(request, abhyasi_id):
 	return detail(request, abhyasi_id)

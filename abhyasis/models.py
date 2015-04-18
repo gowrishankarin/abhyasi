@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+from datetime import datetime
 
 
 class Abhyasi(models.Model):
@@ -21,5 +22,8 @@ class Sitting(models.Model):
 	date = models.DateTimeField('Date and time of individual sitting')
 	findings = models.TextField(max_length=300)
 	experiences = models.TextField(max_length=300)
+	def sitting_since(self):
+		no_days = (timezone.now() - self.date).days
+		return no_days
 	def __str__(self):
 		return self.findings

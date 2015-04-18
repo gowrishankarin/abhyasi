@@ -7,9 +7,11 @@
 	</div>
 	
 	
-	{% for sitting in abhyasi.sitting_set.all %}
+	{% for sitting in sittings %}
 		<div class="row">
-			<div class="col-md-2"></div>
+			<div class="col-md-2">
+				<h4> <span class="label label-warning">{{ sitting.sitting_since }} days</span></h4>
+			</div>
 			<div class="col-md-10">
 				<div class="panel panel-default">
 				  	<div class="panel-heading">
