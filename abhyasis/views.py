@@ -63,7 +63,7 @@ def sitting_new(request, pk):
 			return HttpResponseRedirect(reverse('abhyasis:detail', args=(abhyasi.pk,)))
 		else:
 			form = form
-		return render(request, 'abhyasis/sitting_new.html', {'form': form})
+		return render(request, 'abhyasis/sitting_new.html', {'form': form, 'abhyasi':abhyasi})
 	else:
 		form = SittingForm()
-	return render(request, 'abhyasis/sitting_new.html', {'form': form})	
+	return render(request, 'abhyasis/sitting_new.html', {'form': form, 'abhyasi':abhyasi})	

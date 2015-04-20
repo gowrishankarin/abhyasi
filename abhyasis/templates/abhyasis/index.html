@@ -1,12 +1,12 @@
 {% extends 'abhyasis/base.html' %}
 
 {% block content %}
-	<p><a href="{% url 'abhyasis:abhyasi_new' %}" class="bt btn-sm btn-success">
-		Add new abhyasi</span></a></p>
 	{% if latest_abhyasi_list %}
 		<ul>
 			{% for abhyasi in latest_abhyasi_list %}
-				<li><a href="{% url 'abhyasis:detail' abhyasi.id %}">{{ abhyasi.name }}</a></li>
+				<li><h3><a href="{% url 'abhyasis:detail' abhyasi.id %}">{{ abhyasi.name }}</a></h3>
+				<p>Born on <strong>{{abhyasi.date_of_birth}}</strong>, Joined mission on  <strong>{{abhyasi.date_of_join}}</strong></p>
+				</li>
 			{% endfor %}
 		</ul>
 	{% else %}

@@ -13,13 +13,18 @@
 <body>
 	<div class="page-header">
 		<!--<a href="{% url 'abhyasis:abhyasi_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>-->
-	    <h3><a href="/">Abhyasi Info and Individual Sittings History</a></h3>
+	    <h3><a href="/abhyasis">Abhyasi Info and Individual Sittings History</a></h3>
 	</div>
 
 	<ul>
 		<div class="content container">
 			<div class="row">
-				<div class="col-md-4">Spirituality is the search for a higher experience of ourselves. Experience is the source from which real knowledge begins. Heartfulness is a path to experiencing your inner self.</div>
+				<div class="col-md-4">
+					<div class="list-group">
+						<a href="/abhyasis" class="list-group-item list-group-item-warning">Home: Abhyasi List</a>
+						<a href="{% url 'abhyasis:abhyasi_new' %}" class="list-group-item list-group-item-warning">Add New Abhyasi</a>
+					</div>
+				</div>
 				<div class="col-md-8">
 				{% block content %}
 				{% endblock %}

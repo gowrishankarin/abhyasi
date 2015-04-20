@@ -8,8 +8,8 @@ from datetime import datetime
 class Abhyasi(models.Model):
 	name = models.CharField(max_length=50)
 	id_card_number = models.CharField(max_length=12)
-	date_of_birth = models.DateField('Date of Birth')
-	date_of_join = models.DateField('Date of Join')
+	date_of_birth = models.DateField('Date of Birth (YYYY-MM-DD)')
+	date_of_join = models.DateField('Date of Join (YYYY-MM-DD)')
 	address = models.CharField(max_length=200)
 	email = models.EmailField(blank=True, default='abhyasi@abhyasi.com')
 	biography = models.TextField(max_length=100, default="Short Bio")
@@ -19,7 +19,7 @@ class Abhyasi(models.Model):
 
 class Sitting(models.Model):
 	name = models.ForeignKey(Abhyasi)
-	date = models.DateTimeField('Date and time of individual sitting')
+	date = models.DateTimeField('Date and time of individual sitting (YYYY-MM-DD) (HH:MM)')
 	findings = models.TextField(max_length=300)
 	experiences = models.TextField(max_length=300)
 	def sitting_since(self):
